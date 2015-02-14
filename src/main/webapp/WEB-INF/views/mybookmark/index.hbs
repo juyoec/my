@@ -1,0 +1,25 @@
+{{# partial "head" }}
+{{/partial}}
+{{# partial "body" }}
+    <p>hi!! {{text}}</p>
+    <p>
+    {{#if code}}
+    <form action="/code">
+        <input type="text" name="code" placeholder="code"/>
+        <button type="submit" value="submit"/>
+    </form>
+    {{else }}
+        <label>{{code}}</label>
+    {{/if}}
+    <form action="/url">
+        <input type="text" name="url" placeholder="url"/>
+        <button type="submit" value="submit"/>
+    </form>
+    {{#forEach items}}
+        <span>{{seq}} | {{listSeq}} | {{url}} | {{description}}</span>
+    {{/forEach}}
+    </p>
+{{/partial}}
+{{# partial "foot" }}
+{{/partial}}
+{{> layouts/layout}}
